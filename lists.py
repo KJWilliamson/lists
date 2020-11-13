@@ -23,6 +23,8 @@ __author__ = "Kamela Williamson"
 # https://www.w3resource.com/python-exercises/list/python-data-type-list-exercise-6.php
 # https://www.geeksforgeeks.org/python-remove-empty-strings-from-list-of-strings/
 # https://www.geeksforgeeks.org/python-remove-empty-strings-from-list-of-strings/
+# https://www.askpython.com/python/built-in-methods/python-filter-function
+# https://www.geeksforgeeks.org/append-extend-python/
 
 
 # A. match_ends
