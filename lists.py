@@ -109,9 +109,9 @@ def remove_adjacent(nums):
 
 
 def zip_merge(list1, list2):
-    # your code here
+    # list1.zipped(list2)
+    # return zip_merge
     return
-
 
 # F. empty_filter
 # Given a single list containing strings, empty strings, and
@@ -140,4 +140,6 @@ def empty_filter(list1):
 
 def linear_merge(list1, list2):
     # your code here
-    return
+    single_pass = list1 + list2
+    single_pass.sort()
+    return single_pass
