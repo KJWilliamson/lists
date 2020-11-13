@@ -140,6 +140,15 @@ def empty_filter(list1):
 
 def linear_merge(list1, list2):
     # your code here
-    single_pass = list1 + list2
-    single_pass.sort()
-    return single_pass
+    # single_pass = list1 + list2
+    # single_pass.sort()
+    # return single_pass
+    result = []
+    while len(list1) and len(list2):
+        if list1[0] < list2[0]:
+            result.append(list1.pop(0))
+        else:
+            result.append(list2.pop(0))
+    result.extend(list1)
+    result.extend(list2)
+    return result
