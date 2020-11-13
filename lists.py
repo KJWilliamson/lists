@@ -17,9 +17,12 @@ Kenzie assignment: Lists!
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
 __author__ = "Kamela Williamson"
+# Did zip_merge and empty_filter with Mai
 # https://www.w3resource.com/python-exercises/list/python-data-type-list-exercise-5.php
 # https://www.w3schools.com/python/ref_string_startswith.asp
 # https://www.w3resource.com/python-exercises/list/python-data-type-list-exercise-6.php
+# https://www.geeksforgeeks.org/python-remove-empty-strings-from-list-of-strings/
+# https://www.geeksforgeeks.org/python-remove-empty-strings-from-list-of-strings/
 
 
 # A. match_ends
@@ -109,9 +112,7 @@ def remove_adjacent(nums):
 
 
 def zip_merge(list1, list2):
-    # list1.zipped(list2)
-    # return zip_merge
-    return
+    return [p1 + p2 for p1, p2 in zip(list1, list2)]
 
 # F. empty_filter
 # Given a single list containing strings, empty strings, and
@@ -124,7 +125,8 @@ def zip_merge(list1, list2):
 
 def empty_filter(list1):
     # your code here
-    return
+    list1 = list(filter(None, list1))
+    return list1
 
 
 # G. linear_merge
