@@ -17,7 +17,9 @@ Kenzie assignment: Lists!
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
 __author__ = "Kamela Williamson"
-# 
+# https://www.w3resource.com/python-exercises/list/python-data-type-list-exercise-5.php
+# https://www.w3schools.com/python/ref_string_startswith.asp
+
 
 # A. match_ends
 # Given a list of strings, return the count of the number of
@@ -28,7 +30,12 @@ __author__ = "Kamela Williamson"
 
 def match_ends(words):
     # your code here
-    return
+    # empty string
+    str = 0
+    for compare in words:
+        if len(compare) > 1 and compare[0] == compare[-1]:
+            str += 1
+    return str
 
 
 # B. front_x
@@ -44,8 +51,14 @@ def match_ends(words):
 
 def front_x(words):
     # your code here
-    return
+    x_words = []
+    not_x = []
+    # x is first
+    x_words = sorted([letter for letter in words if letter[0] == 'x'])
+    not_x = sorted([letter for letter in words if letter[0] != 'x'])
+    # holy crap it let me do it
 
+    return x_words + not_x
 
 # C. sort_last
 # Given a list of non-empty tuples, return a list sorted in
