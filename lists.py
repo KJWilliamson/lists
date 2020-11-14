@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+# !/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
 Kenzie assignment: Lists!
@@ -16,7 +16,16 @@ Kenzie assignment: Lists!
 
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "Kamela Williamson"
+# Did zip_merge and empty_filter with Mai
+# https://www.w3resource.com/python-exercises/list/python-data-type-list-exercise-5.php
+# https://www.w3schools.com/python/ref_string_startswith.asp
+# https://www.w3resource.com/python-exercises/list/python-data-type-list-exercise-6.php
+# https://www.geeksforgeeks.org/python-remove-empty-strings-from-list-of-strings/
+# https://www.geeksforgeeks.org/python-remove-empty-strings-from-list-of-strings/
+# https://www.askpython.com/python/built-in-methods/python-filter-function
+# https://www.geeksforgeeks.org/append-extend-python/
+
 
 # A. match_ends
 # Given a list of strings, return the count of the number of
@@ -27,7 +36,12 @@ __author__ = "???"
 
 def match_ends(words):
     # your code here
-    return
+    # empty string
+    str = 0
+    for compare in words:
+        if len(compare) > 1 and compare[0] == compare[-1]:
+            str += 1
+    return str
 
 
 # B. front_x
@@ -43,8 +57,15 @@ def match_ends(words):
 
 def front_x(words):
     # your code here
-    return
+    x_words = []
+    not_x = []
+    # x is first
+    # look up why i had to wrap it in () and why i had to use letter before for
+    x_words = sorted([letter for letter in words if letter[0] == 'x'])
+    not_x = sorted([letter for letter in words if letter[0] != 'x'])
+    # holy crap it let me do it
 
+    return x_words + not_x
 
 # C. sort_last
 # Given a list of non-empty tuples, return a list sorted in
@@ -57,7 +78,9 @@ def front_x(words):
 
 def sort_last(tuples):
     # your code here
-    return
+    # why do they have to be on the same line?
+    def last_element(i): return i[-1]
+    return sorted(tuples, key=last_element)
 
 
 # D. remove_adjacent
@@ -67,11 +90,17 @@ def sort_last(tuples):
 #   [1, 2, 2, 3] -> [1, 2, 3]
 # You may create a new list or modify the passed in list.
 # Hint: Don't use set()
+# this is confusing. took me hours
 
 
 def remove_adjacent(nums):
     # your code here
-    return
+    # return a list
+    final_list = []
+    for num in nums:
+        if len(final_list) == 0 or num != final_list[-1]:
+            final_list.append(num)
+    return final_list
 
 
 # E. zip_merge
@@ -85,9 +114,7 @@ def remove_adjacent(nums):
 
 
 def zip_merge(list1, list2):
-    # your code here
-    return
-
+    return [p1 + p2 for p1, p2 in zip(list1, list2)]
 
 # F. empty_filter
 # Given a single list containing strings, empty strings, and
@@ -100,7 +127,8 @@ def zip_merge(list1, list2):
 
 def empty_filter(list1):
     # your code here
-    return
+    list1 = list(filter(None, list1))
+    return list1
 
 
 # G. linear_merge
@@ -116,4 +144,15 @@ def empty_filter(list1):
 
 def linear_merge(list1, list2):
     # your code here
-    return
+    # single_pass = list1 + list2
+    # single_pass.sort()
+    # return single_pass
+    result = []
+    while len(list1) and len(list2):
+        if list1[0] < list2[0]:
+            result.append(list1.pop(0))
+        else:
+            result.append(list2.pop(0))
+    result.extend(list1)
+    result.extend(list2)
+    return result
